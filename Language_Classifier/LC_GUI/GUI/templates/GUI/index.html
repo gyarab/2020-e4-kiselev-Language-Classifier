@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}LangClass{% endblock %}
+
+{% block content %}
+
+    <form>
+    <input name="text">
+    <input type="submit">
+    </form>
+    {% if a != None %}
+        {% for i in a %}
+            <p>     {{i}}</p>
+        {% endfor %}
+    {% endif %}
+
+    {{output}}
+<!--<script>alert("Na strance byl pouzit bootstrap!");</script>-->
+{% endblock %}

@@ -2,18 +2,80 @@
 
 {% block title %}LangClass{% endblock %}
 
+{% block style %}
+#textarea {
+  -moz-appearance: textfield-multiline;
+  -webkit-appearance: textarea;
+  border: none;
+  opacity: 1;
+  height: 100%;
+  overflow: auto;
+  padding: 5px;
+
+  margin: auto;
+  outline: 0;
+  width: 1000px;
+  white-space: pre-wrap;
+
+}
+
+[contenteditable] {
+    background-color: white;
+    color: black;
+    width: 400px;
+    height: 200px;
+  }
+
+html, body {
+  height: 93.5%;
+}
+
+.form-control:focus {
+  outline: 0;
+  opacity: 1;
+  box-shadow: 0 0 0 0rem rgba(0,123,255,.25);
+  color: black;
+}
+
+
+{% endblock %}
+
 {% block content %}
+<script>
+    function getContent(){
+        document.getElementById("hidden-textarea").value = document.getElementById("textarea").innerHTML;
+    }
+</script>
 
-    <form>
-    <input name="text">
-    <input type="submit">
-    </form>
-    {% if a != None %}
-        {% for i in a %}
-            <p>     {{i}}</p>
-        {% endfor %}
-    {% endif %}
+<div style="width: 150px; position: absolute; right:0;">
+    {% for k, v in card.items %}
+<div class="row" style=" margin: 5px;">
+ <div class="card" style="width: 25px; height: 25px; position: relative; background-color:{{v}}">
+</div>
+    <p class="card-text" style=" margin-left: 5px;">{{k}}</p>
+</div>
+    {% endfor %}
+</div>
 
-    {{output}}
-<!--<script>alert("Na strance byl pouzit bootstrap!");</script>-->
+<div style="height: calc(100% - 24px);" >
+<div id="textarea" contenteditable="True" name="text" type="text" spellcheck="false" class="form-control">{% for k, v in input.items %}<span style="background: -webkit-linear-gradient(left,{{v.0}}, {{v.1}}); display: inline; ">{{k}} </span>{% endfor %}</div>
+</div>
+
+
+
+
+<script>
+    document.querySelector('[contenteditable]').addEventListener('paste', function (event) {
+  event.preventDefault();
+  document.execCommand('inserttext', false, event.clipboardData.getData('text/plain'));
+});
+</script>
+
+<nav class="navbar fixed-bottom navbar-expand-lg navbar-dark bg-primary " style="position: absolute;">
+ <form onsubmit="return getContent()" class="form-inline my-2 my-lg-0 ml-auto"  style="float: right;" >
+    <textarea id="hidden-textarea" style="display:none" name="text" ></textarea>
+    <input type="submit" class="btn btn-outline-light" style="float: right;"  value="Detect Language"/>
+</form>
+</nav>
+
 {% endblock %}

@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block title %}LangClass{% endblock %}
+
+{% block style %}
+#textarea {
+  -moz-appearance: textfield-multiline;
+  -webkit-appearance: textarea;
+  border: none;
+  opacity: 1;
+  height: 100%;
+  overflow: auto;
+  padding: 5px;
+
+  margin: auto;
+  outline: 0;
+  width: 1000px;
+  white-space: pre-wrap;
+
+}
+
+[contenteditable] {
+    background-color: white;
+    color: black;
+    width: 400px;
+    height: 200px;
+  }
+
+html, body {
+  height: 93.5%;
+}
+
+.form-control:focus {
+  outline: 0;
+  opacity: 1;
+  box-shadow: 0 0 0 0rem rgba(0,123,255,.25);
+  color: black;
+}
+
+
+{% endblock %}
+
+{% block content %}
+
+<div style="width: 150px; position: absolute; right:0;">
+<div class="row" style=" margin: 5px;">
+ <div class="card" style="width: 25px; height: 25px; position: relative; background-color:#fb9a99">
+</div>
+    <p class="card-text" style=" margin-left: 5px;">English</p>
+</div>
+
+</div>
+
+<div style="height: calc(100% - 24px);" >
+<div id="textarea" contenteditable="False" name="text" type="text" spellcheck="false" class="form-control"><span style="background: -webkit-linear-gradient(left,#fb9a99, #fb9a99); display: inline; ">Welcome to Language Classifier!
+
+Language Classifier is my school project. Its purpose is to classify different languages in text. Right now the project supports 12 languages. Those languages are: Czech, Russian, French, German, English, Polish, Italian, Ukrainian, Finnish, Bulgarian, Spanish and Portuguese.
+
+To use it, you must paste your text into the input field at the home page and click the "Detect Language" button.
+
+Formatting and text written between "<" and ">" will be removed. Empty spaces and new lines too. But other special characters should stay intact.
+
+Remember that input text should be atleast 30 words long for classifier to work well, and you should use only supported languages.
+
+By clicking Documentation button you can learn more information about the project, but right now only czech documentation is avalible.
+
+</span>
+</div>
+</div>
+
+
+<nav class="navbar fixed-bottom navbar-expand-lg navbar-dark bg-primary " style="position: absolute;">
+</nav>
+
+{% endblock %}

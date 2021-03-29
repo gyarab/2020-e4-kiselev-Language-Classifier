@@ -30,13 +30,19 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/LC_GUI/GUI" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/LC_GUI/GUI/templates/GUI" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/LC_GUI/GUI/templates/GUI" />
+      <recent name="$PROJECT_DIR$/LC_GUI/GUI/templates" />
       <recent name="$PROJECT_DIR$/LC_GUI/GUI" />
       <recent name="$PROJECT_DIR$/LC_GUI/LC_GUI" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/LC_GUI/GUI/templates/GUI" />
+      <recent name="$PROJECT_DIR$/LC_GUI/GUI/templates" />
     </key>
   </component>
   <component name="RunManager" selected="Python.test">
@@ -98,6 +104,9 @@
       <updated>1614812820843</updated>
     </task>
     <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.css" />
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />

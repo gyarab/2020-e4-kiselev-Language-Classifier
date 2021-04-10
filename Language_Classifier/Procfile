@@ -1,0 +1,1 @@
+web: gunicorn Language_Classifier.wsgi --log-file -
